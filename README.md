@@ -60,3 +60,40 @@
 > **Note:** Test Condition: BAT Pin Input @ 3.8V | Source Capability: 3A
 
 </details>
+## 📍 Pin Mapping & Functions
+
+<details>
+<summary><b>Click to expand Pinout Table</b></summary>
+
+| XIAO Pin | Function | Chip Pin | Alternate Functions | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| **5V** | VBUS | - | Power Input/Output | Primary power rail |
+| **GND** | Ground | - | - | Common ground |
+| **3V3** | 3V3_OUT | - | Power Output | Regulated 3.3V output |
+| **D0** | Analog | GPIO2 | ADC1_CH2 | GPIO, ADC |
+| **D1** | Analog | GPIO3 | ADC1_CH3 | GPIO, ADC |
+| **D2** | Analog | GPIO4 | ADC1_CH4, FSPIHD, MTMS | GPIO, ADC, JTAG |
+| **D3** | Analog | GPIO5 | ADC2_CH0, FSPIWP, MTDI | GPIO, ADC, JTAG |
+| **D4** | SDA | GPIO6 | FSPICLK, MTCK | GPIO, I2C Data, JTAG |
+| **D5** | SCL | GPIO7 | FSPID, MTDO | GPIO, I2C Clock, JTAG |
+| **D6** | TX | GPIO21 | U0TXD | GPIO, UART Transmit |
+| **D7** | RX | GPIO20 | U0RXD | GPIO, UART Receive |
+| **D8** | SCK | GPIO8 | - | GPIO, SPI Clock |
+| **D9** | MISO | GPIO9 | - | GPIO, SPI Data, Boot Mode |
+| **D10** | MOSI | GPIO10 | FSPICS0 | GPIO, SPI Data |
+
+## System & Internal Pins
+| Feature | Chip Pin | Description |
+| :--- | :--- | :--- |
+| **Reset** | CHIP_EN | System Reset (EN) |
+| **Boot** | GPIO9 | Enter Boot Mode (Internal) |
+| **Antenna** | LNA_IN | U.FL-R-SMT1 Connector |
+| **Charge LED** | VCC_3V3 | Integrated Charging Indicator |
+
+</details>
+
+## Strapping Pins
+
+According to the chip manual of ESP32C3, GPIO2, GPIO8 and GPIO9 in the chip are Strapping Pins, the high and low level configurations of these pins may allow the chip to enter into different Boot modes, please pay attention to this point when you use these pins, otherwise it may prevent your XIAO from uploading or executing the program all the time.
+
+<img width="931" height="520" alt="image" src="https://github.com/user-attachments/assets/a8e1726c-a2f7-4c7a-8e05-59bd7a3953b4" />
